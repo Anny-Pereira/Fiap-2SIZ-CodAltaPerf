@@ -32,9 +32,19 @@ public class ABBint {
 	public void mostraEmOrdem(NO p) {
 		if(p !=null) {
 			mostraEmOrdem(p.esq);
-			System.out.println(p.dado + "\t");
+			System.out.print(p.dado + "\t");
 			mostraEmOrdem(p.dir);
 		}
+	}
+	
+	
+	public int contaNos(NO p, int cont) {
+		if (p != null) {
+			cont ++;
+			cont = contaNos(p.esq, cont);
+			cont = contaNos(p.dir, cont);
+		}
+		return cont;
 	}
 	
 }

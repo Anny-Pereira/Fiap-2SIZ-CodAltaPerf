@@ -25,6 +25,8 @@ public class MainTeste {
 			System.out.println("3 - apresenta qtd de nos na ABB");
 			System.out.println("4 - verifica a existencia de valor na ABB");
 			System.out.println("5 - verifica qtd de comparacoes para pesquisar um valor na ABB");
+			System.out.println("6 - remove um valor na ABB");
+			System.out.println("7 - valor maximo da ABB");
 			
 			opcao = le.nextInt();
 			
@@ -68,6 +70,18 @@ public class MainTeste {
 				//metodo conta consulta
 				int comparacoes = abb.contaConsulta(abb.root, valor, 0);
 				System.out.println("Numero de comparacoes realizadas na busca: "+ comparacoes);
+				break;
+			case 6:
+				System.out.println("Informe o valor a ser removido: ");
+				valor = le.nextInt();
+				abb.root = abb.removeValor(abb.root, valor);
+				break;
+			case 7:
+				if(abb.root != null) {
+					System.out.println("Maior valor na ABB: "+ abb.maximo(abb.root));
+				} else {
+					System.out.println("ABB esta vazia");
+				}
 				break;
 				
 			default:

@@ -53,25 +53,21 @@ public class ABBint {
 		}
 	}
 	
-	public int contaConsulta(NO p, int valor) {
-		int cont=0;
-		if(p ==null) {
-			return 0;
-		} else {
-			
+	public int contaConsulta(NO p, int valor, int cont) {
+		
+		if(p !=null) {
+			cont++;
 			if(valor ==p.dado) {
-				cont++;
 				return cont;
 			} else if(valor < p.dado) {
-				cont++;
-				consulta(p.esq, valor);
-				return cont;
+				return contaConsulta(p.esq, valor, cont);
+				
 			} else {
-				cont++;
-				consulta(p.dir, valor);
-				return cont;
+				return contaConsulta(p.dir, valor, cont);
 			}
 		}
+		
+		return cont;
 	}
 	
 	

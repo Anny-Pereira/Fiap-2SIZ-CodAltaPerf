@@ -28,7 +28,8 @@ public class Menu {
 			case 1:
 				System.out.println("Informe valor: ");
 				int valor = le.nextInt();
-				avl.root = avl.inserirH(avl.root, valor);
+				avl.root = avl.inserirAVL(avl.root, valor);
+				avl.atualizaAlturas(avl.root);
 				break;
 				
 			case 2:

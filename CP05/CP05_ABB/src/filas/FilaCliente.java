@@ -1,4 +1,4 @@
-package filasInt;
+package filas;
 
 import aplicacao.Cliente;
 
@@ -20,11 +20,11 @@ public class FilaCliente {
 		return (cont == N);
 	}
 
-	public void enqueue(Cliente cliente) {
+	public void enqueue(Cliente elem) {
 		if (isFull())
 			System.out.println("Fila cheia");
 		else {
-			dados[fim] = cliente;
+			dados[fim] = elem;
 			fim = (fim + 1) % N;
 			cont++;
 		}
